@@ -1,0 +1,5 @@
+pip install kaggle
+pip install -U pandas
+pip install feather-format
+pip install lightgbm
+pip install imblearn
