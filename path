@@ -7,3 +7,14 @@ http://jhub.wp16005.wing.sysrdc.com/
 https://gitlab.wp16005.wing.sysrdc.com/-/grafana/d/RfW2QhOWk/jupyter-pods?orgId=1
 
 http://mlflow.wp16005.wing.sysrdc.com/#/experiments/5
+
+ # # card1がひとつ前に行った時間と金額を特徴に入れる
+# card_tra = pd.DataFrame()
+
+# for card_num in tqdm(card1_list):
+#     card_temp = all_data.query('card1 == @card_num')
+#     card_temp_shift = card_temp[['TransactionDT','TransactionAmt']].shift(1)
+#     card_temp_shift = card_temp_shift.rename(columns={'TransactionDT':'TransactionDT_shift','TransactionAmt':'TransactionAmt_shift'})
+#     card_tra = pd.concat([card_tra, card_temp_shift],axis = 0)
+
+# all_data = pd.concat([all_data,card_tra],axis=1)
