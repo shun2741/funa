@@ -18,3 +18,14 @@ http://mlflow.wp16005.wing.sysrdc.com/#/experiments/5
 #     card_tra = pd.concat([card_tra, card_temp_shift],axis = 0)
 
 # all_data = pd.concat([all_data,card_tra],axis=1)
+
+
+train['TransactionAmt_dffDT'] = pd.concat([
+    train.groupby('TransactionAmt')['TransactionDT'].diff(),
+    -train.groupby('TransactionAmt')['TransactionDT'].diff(-1)
+], axis=1).min(axis=1)
+
+test['TransactionAmt_dffDT'] = pd.concat([
+    test.groupby('TransactionAmt')['TransactionDT'].diff()
+    -test.groupby('TransactionAmt')['TransactionDT'].diff(-1)
+], axis=1).min(axis=1)
